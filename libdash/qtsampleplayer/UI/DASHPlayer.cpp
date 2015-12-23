@@ -71,6 +71,12 @@ void DASHPlayer::OnStopButtonPressed                ()
 {
     this->multimediaManager->Stop();
 }
+
+/**
+ *  Abdallah Abdallah
+ *  So obviosly this is where all the dynamics are being changed and we can
+ *
+ */
 void DASHPlayer::OnSettingsChanged                  (int period, int videoAdaptationSet, int videoRepresentation, int audioAdaptationSet, int audioRepresentation)
 {
     if(this->multimediaManager->GetMPD() == NULL)
@@ -108,6 +114,10 @@ void DASHPlayer::OnSettingsChanged                  (int period, int videoAdapta
 }
 void DASHPlayer::OnVideoBufferStateChanged          (uint32_t fillstateInPercent)
 {
+	/**
+	 *  Abdallah Abdallah
+	 *  emit is used to emitting a signal, basically calling a function that generates a signal
+	 */
     emit VideoBufferFillStateChanged(fillstateInPercent);
 }
 void DASHPlayer::OnVideoSegmentBufferStateChanged   (uint32_t fillstateInPercent)

@@ -23,6 +23,11 @@ namespace sampleplayer
 
         public:
             virtual ~IDASHPlayerGuiObserver() {}
+            /**
+             *  Added by Abdallah Abdallah, these virtual functions are implemented by the (DASHPlayer) object,
+             *  whose constructor receives the (QtSamplerPlayerGui) object as an input to built upon
+             *
+             */
 
             virtual void OnSettingsChanged      (int period, int videoAdaptationSet, int videoRepresentation, int audioAdaptationSet, int audioRepresentation)  = 0;
             virtual void OnStartButtonPressed   (int period, int videoAdaptationSet, int videoRepresentation, int audioAdaptationSet, int audioRepresentation)  = 0;

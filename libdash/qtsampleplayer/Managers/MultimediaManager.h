@@ -64,6 +64,9 @@ namespace sampleplayer
                 dash::mpd::IPeriod                                          *period;
                 dash::mpd::IAdaptationSet                                   *videoAdaptationSet;
                 dash::mpd::IRepresentation                                  *videoRepresentation;
+                /**
+                 *  Added by Abdallah Abdallah, here is the value of the logic that can be changed
+                 */
                 libdash::framework::adaptation::IAdaptationLogic            *videoLogic;
                 MultimediaStream                                            *videoStream;
                 dash::mpd::IAdaptationSet                                   *audioAdaptationSet;

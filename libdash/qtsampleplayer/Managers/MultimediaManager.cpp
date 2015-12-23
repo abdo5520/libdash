@@ -169,6 +169,13 @@ bool    MultimediaManager::SetAudioQuality                  (IPeriod* period, IA
     LeaveCriticalSection(&this->monitorMutex);
     return true;
 }
+/**
+ * Added by Abdallah Abdallah December 19, 2015
+ *  DASHPlayer is defined as a class inside the sampleplayer namespace.
+ *  The class MultimediaManager is a subclass inside the
+ *
+ *
+ */
 bool    MultimediaManager::SetVideoAdaptationLogic          (libdash::framework::adaptation::LogicType type)
 {
     //Currently unused, always using ManualAdaptation.
@@ -205,8 +212,15 @@ void    MultimediaManager::NotifyAudioBufferObservers       (uint32_t fillstateI
 }
 void    MultimediaManager::InitVideoRendering               (uint32_t offset)
 {
+	/**
+	 *  Added by Abdallah Abdallah , here is where it does initialize the adaptation logic type
+	 *  by generating a Manual Adaptation through the helper Factory.
+	 *
+	 *
+	 */
     this->videoLogic = AdaptationLogicFactory::Create(libdash::framework::adaptation::Manual, this->mpd, this->period, this->videoAdaptationSet);
 
+//    this->videoLogic = AdaptationLogicFactory::Create(libdash::framework::adaptation::AlwaysLowest, this->mpd, this->period, this->videoAdaptationSet);
     this->videoStream = new MultimediaStream(sampleplayer::managers::VIDEO, this->mpd, SEGMENTBUFFER_SIZE, 2, 0);
     this->videoStream->AttachStreamObserver(this);
     this->videoStream->SetRepresentation(this->period, this->videoAdaptationSet, this->videoRepresentation);

@@ -211,6 +211,7 @@ void            QtSamplePlayerGui::NotifySettingsChanged                        
     int period              = this->ui->cb_period->currentIndex();
     int videoAdaptionSet    = this->ui->cb_video_adaptationset->currentIndex();
     int videoRepresentation = this->ui->cb_video_representation->currentIndex();
+
     int audioAdaptionSet    = this->ui->cb_audio_adaptationset->currentIndex();
     int audioRepresentation = this->ui->cb_audio_representation->currentIndex();
 

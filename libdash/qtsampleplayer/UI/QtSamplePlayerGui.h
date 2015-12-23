@@ -37,7 +37,10 @@ namespace sampleplayer
             virtual void                            SetStatusBar            (const std::string& text);
             virtual std::string                     GetUrl                  ();
             sampleplayer::renderer::QTGLRenderer*   GetVideoElement         ();
-
+            // Added by Abdallah Abdallah
+            void setIndexInternalClass (int i) {ui->cb_video_representation->setCurrentIndex(i);}
+            void locking (){LockUI();}
+            void unlocking() {UnLockUI();}
         private slots:
             void on_cb_mpd_currentTextChanged                   (const QString &arg1);
             void on_cb_period_currentIndexChanged               (int index);
